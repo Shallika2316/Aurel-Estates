@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aurel Estates</title>
+  <meta name="description" content="Aurel Estates helps you discover homes to buy or rent across New Delhi, Gurugram, Bangalore and Jaipur." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="assets/img/intro-desktop.webp" media="(min-width: 769px)" />
+  <link rel="preload" as="image" href="assets/img/intro-mobile.webp" media="(max-width: 768px)" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="is-locked">
+
+  <!-- ============ PRELOADER ============ -->
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader__logo">Aurel Estates</div>
+    <div class="preloader__bar"><span></span></div>
+  </div>
+
+  <!-- ============ INTRO / GOLDEN GATE ============ -->
+  <section class="intro" aria-label="Welcome">
+    <div class="intro__media">
+      <picture>
+        <source media="(max-width: 768px)" srcset="assets/img/intro-mobile.webp" data-door-x="0.5" data-door-y="0.735" />
+        <img class="intro__img" src="assets/img/intro-desktop.webp" alt="A sunlit modern mansion with a tall glass entrance" data-door-x="0.495" data-door-y="0.735" />
+      </picture>
+    </div>
+    <div class="intro__fog"></div>
+    <div class="intro__glow"></div>
+
+    <div class="intro__logo">Aurel Estates</div>
+
+    <h1 class="intro__title">
+      <span class="line"><span class="w u">Discover</span> <span class="w u">spaces</span> <span class="w g">that</span> <span class="w g">feel</span> <span class="w g">like</span></span>
+      <span class="line"><span class="w g">they</span> <span class="w">were</span> <span class="w u">meant</span> <span class="w u">for</span> <span class="w u">you</span></span>
+    </h1>
+
+    <button class="intro__hint" type="button" aria-label="Enter the site">
+      <span>Scroll to enter</span>
+      <i></i>
+    </button>
+  </section>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="#top" class="nav__logo">Aurel Estates</a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#find">Buy</a>
+        <a href="#find">Rent</a>
+        <a href="#residences">Neighborhoods</a>
+        <a href="#experience">About</a>
+      </nav>
+      <a href="#visit" class="btn btn--sand nav__cta">Login / Sign Up</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero__media">
+        <picture>
+          <source media="(max-width: 768px)" srcset="assets/img/hero-mobile.webp" />
+          <img src="assets/img/hero-desktop.webp" alt="A double-height living room opening onto a valley view" />
+        </picture>
+      </div>
+      <div class="hero__shade"></div>
+      <div class="hero__content">
+        <p class="hero__eyebrow">A new perspective on living</p>
+        <h2 class="hero__title"><span>Welcome</span> <span>to</span> <span>Aurel</span></h2>
+        <p class="hero__text">A home is more than an address. It's the feeling of belonging, the freedom to grow, and the everyday moments that make a space yours. Aurel helps you discover a place that feels right.</p>
+        <div class="hero__cta"><a href="#residences" class="btn btn--sage hero__btn">Start Exploring <span aria-hidden="true">→</span></a></div>
+      </div>
+    </section>
+
+    <!-- ============ RESIDENCES ============ -->
+    <section class="res" id="residences">
+      <div class="container">
+        <header class="res__head">
+          <h2 class="h-display reveal-up">Residence of Distinction</h2>
+          <p class="reveal-up">From quiet, tree-lined streets to the energy of a city address, discover places that offer more than four walls.</p>
+        </header>
+
+        <div class="res__body">
+          <ol class="res__tabs" role="tablist" aria-label="Residence types">
+            <li><button role="tab" aria-selected="true" data-tab="0">01</button></li>
+            <li><button role="tab" aria-selected="false" data-tab="1">02</button></li>
+            <li><button role="tab" aria-selected="false" data-tab="2">03</button></li>
+            <li><button role="tab" aria-selected="false" data-tab="3">04</button></li>
+          </ol>
+
+          <div class="res__main">
+            <div class="res__main-img"><img src="assets/img/res-1-main.webp" alt="" /></div>
+          </div>
+
+          <div class="res__info">
+            <h3 class="res__title">Luxury Residential Homes</h3>
+            <p class="res__desc">Discover exceptional residences defined by timeless architecture, refined interiors, and thoughtfully chosen locations, where luxury meets everyday comfort.</p>
+            <span class="tag res__tag">Available for Buying and Renting</span>
+            <dl class="res__stats">
+              <div><dt>Starting From</dt><dd class="res__price">₹ 1 Cr.</dd></div>
+              <div><dt>Area</dt><dd class="res__area">1000 - 4500 sq. ft.</dd></div>
+              <div><dt>BHK Configuration</dt><dd class="res__bhk">2- 5 BHK</dd></div>
+            </dl>
+            <div class="res__thumbs">
+              <div class="res__thumb"><img src="assets/img/res-1-a.webp" alt="" /></div>
+              <div class="res__thumb"><img src="assets/img/res-1-b.webp" alt="" /></div>
+              <div class="res__thumb"><img src="assets/img/res-1-c.webp" alt="" /></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#find" class="res__more magnetic">And<br />many<br />more →</a>
+      <div class="res__progress"><span></span></div>
+    </section>
+
+    <!-- ============ FIND ============ -->
+    <section class="find" id="find">
+      <div class="container">
+        <header class="section-head">
+          <h2 class="h-display reveal-up">How would you like to find your next home?</h2>
+          <p class="reveal-up">Whether you're looking to buy a home of your own or find a place to rent, discover spaces that fit your life, your plans, and your next chapter.</p>
+        </header>
+        <div class="find__grid">
+          <article class="card">
+            <img src="assets/img/card-buy.webp" alt="A three-storey townhouse with planted balconies" />
+            <div class="card__body">
+              <h3>Buy a home</h3>
+              <p>Find a place to call your own, with spaces selected for the life you're building.</p>
+              <a href="#visit" class="btn btn--light btn--sm">Explore homes for sale</a>
+            </div>
+          </article>
+          <article class="card">
+            <img src="assets/img/card-rent.webp" alt="A contemporary apartment block with wooden balconies" />
+            <div class="card__body">
+              <h3>Rent a home</h3>
+              <p>Discover a space that fits your lifestyle, whether you're starting fresh or finding a new neighbourhood.</p>
+              <a href="#visit" class="btn btn--light btn--sm">Explore homes for rent</a>
+            </div>
+          </article>
+          <article class="card">
+            <img src="assets/img/card-browse.webp" alt="A bedroom with a walk-in wooden wardrobe" />
+            <div class="card__body">
+              <h3>Not Sure? Just Browse!</h3>
+              <p>Explore a curated collection of homes and discover a space that feels right for you, even if you're still figuring out what you want.</p>
+              <a href="#residences" class="btn btn--light btn--sm">Browse all homes</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section class="stats">
+      <div class="container stats__inner">
+        <p class="stats__lead reveal-up">Good choices begin with the right possibilities.</p>
+        <div class="stats__items">
+          <div class="stat">
+            <span class="stat__num"><span class="count" data-to="500">0</span><sup>+</sup></span>
+            <span class="stat__txt"><b>Homes discovered</b>A range of places to explore.</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num"><span class="count" data-to="25">0</span><sup>+</sup></span>
+            <span class="stat__txt"><b>Neighbourhoods</b>Different ways to experience a city.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="exp" id="experience">
+      <header class="section-head container">
+        <h2 class="h-display reveal-up">The Aurel Experience</h2>
+      </header>
+
+      <div class="marquee">
+        <div class="marquee__track">
+          <!-- one set of columns; JS clones it for a seamless loop -->
+          <div class="marquee__set">
+            <div class="mcol">
+              <div class="tile tile--quote"><q>It wasn't just about finding an apartment. It was finding my own space.</q></div>
+              <div class="tile tile--img tile--video"><img src="assets/img/t-video-aerial.webp" alt="Aerial video tour of a gated community" /></div>
+              <div class="tile tile--img tall"><img src="assets/img/res-2-c.webp" alt="A couple cooking together in their new kitchen" /></div>
+            </div>
+            <div class="mcol">
+              <div class="tile tile--review">
+                <p>The location mattered just as much as the property. Exploring different areas helped us imagine what everyday life could look like, and that changed everything.</p>
+                <div class="who"><img src="assets/img/avatar-shivika.webp" alt="" /><span><b>Shivika &amp; Shayaan</b>Homeowners</span></div>
+              </div>
+              <div class="tile tile--img tile--video tall"><img src="assets/img/t-video-room.webp" alt="Video walkthrough of a living room" /></div>
+            </div>
+            <div class="mcol">
+              <div class="tile tile--img tall"><img src="assets/img/res-2-a.webp" alt="Apartment towers around a landscaped lawn" /></div>
+              <div class="tile tile--quote"><q>For the first time, the search felt as special as the home itself.</q></div>
+              <div class="tile tile--quote"><q>It wasn't just about finding an apartment. It was finding my own space.</q></div>
+            </div>
+            <div class="mcol mcol--wide">
+              <div class="tile tile--review">
+                <p>Buying our first home felt like a decision we had to get absolutely right. We spent weeks looking at properties, wondering whether we we'll even find our home. What we appreciated most about Aurel was being able to explore homes with a clearer sense of what mattered to us. Walking through the front door, we could finally picture our life there.</p>
+                <div class="who"><img src="assets/img/avatar-aditi.webp" alt="" /><span><b>Aditi &amp; Rahul</b>Homebuyers</span></div>
+              </div>
+              <div class="tile tile--quote"><q>We found a neighbourhood that felt like home</q></div>
+            </div>
+            <div class="mcol mcol--wide">
+              <div class="tile tile--review">
+                <p>Moving to a new city meant starting over in more ways than one. I wanted somewhere close to work, but I also wanted a neighbourhood where feel comfortable coming home to. Exploring different properties at Aurel helped me understand what was available without feeling overwhelmed by endless options.</p>
+                <div class="who"><img src="assets/img/avatar-meera.webp" alt="" /><span><b>Meera Sharma</b>Tenant</span></div>
+              </div>
+              <div class="tile tile--img tall"><img src="assets/img/t-family.webp" alt="A family playing a board game in their living room" /></div>
+            </div>
+            <div class="mcol">
+              <div class="tile tile--img tall"><img src="assets/img/res-4-a.webp" alt="A stone-clad three-storey home" /></div>
+              <div class="tile tile--quote"><q>For the first time, the search felt as special as the home itself.</q></div>
+              <div class="tile tile--quote"><q>It wasn't just about finding an apartment. It was finding my own space.</q></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp__cta reveal-up">
+        <p>Share your experience with us by clicking the button below!</p>
+        <a href="#visit" class="btn btn--dark">Submit a Review</a>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="faq" id="faq">
+      <div class="container faq__inner">
+        <h2 class="faq__title h-display reveal-up">Questions?<br /><em>We have the answers!</em></h2>
+        <div class="faq__list">
+          <div class="faq__item is-open">
+            <button class="faq__q" aria-expanded="true">How do I schedule a property viewing?<i></i></button>
+            <div class="faq__a"><p>Choose your preferred viewing method, select a date and time, and share your contact details through our viewing request form. Our team will get in touch to confirm your appointment.</p></div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false">Can I visit a property virtually?<i></i></button>
+            <div class="faq__a"><p>Yes. Pick “Video walkthrough” in the visit form and one of our property advisors will take you through the home on a live video call, answering questions as you go.</p></div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false">Can I buy or rent a property through Aurel Estates?<i></i></button>
+            <div class="faq__a"><p>Absolutely. Every listing is marked as available for buying, renting, or both, and our team supports you from the first viewing through paperwork and handover.</p></div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false">Can I save properties I like?<i></i></button>
+            <div class="faq__a"><p>Create a free account and tap the bookmark on any listing. Your saved homes stay in one place so you can compare them whenever you're ready.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ VISIT FORM ============ -->
+    <section class="visit" id="visit">
+      <div class="visit__bg">
+        <picture>
+          <source media="(max-width: 900px)" srcset="assets/img/form-bg-mobile.webp" />
+          <img src="assets/img/form-bg.webp" alt="" />
+        </picture>
+      </div>
+      <div class="container visit__inner">
+        <div class="visit__intro">
+          <p class="eyebrow reveal-up">Schedule a visit</p>
+          <h2 class="visit__title reveal-up">Let’s find your<br />Dream home.</h2>
+          <p class="reveal-up">Arrange a private viewing or speak with our property team. Share a few details and we'll take care of the rest.</p>
+        </div>
+
+        <div class="house">
+          <img class="house__panel" src="assets/img/house-panel.webp" alt="" />
+          <!-- phones: roof + stretchable wall + base, so the house grows with the form -->
+          <div class="house__m" aria-hidden="true">
+            <img class="house__m-roof" src="assets/img/house-roof.webp" alt="" />
+            <div class="house__m-wall"></div>
+            <img class="house__m-base" src="assets/img/house-base.webp" alt="" />
+          </div>
+          <form class="house__form" novalidate>
+            <div class="step">
+              <div class="step__num"><b>01</b>Visit preferences</div>
+              <div class="step__fields">
+                <fieldset class="field field--full">
+                  <legend>Visit type</legend>
+                  <div class="choices">
+                    <label class="choice">
+                      <input type="radio" name="visit" value="in-person" checked />
+                      <span class="choice__box"></span>
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5M5.5 9.5V20h13V9.5M10 20v-5.5h4V20" /></svg>
+                      <span class="choice__txt"><b>In-person viewing</b>Visit the property at the scheduled time.</span>
+                    </label>
+                    <label class="choice">
+                      <input type="radio" name="visit" value="video" />
+                      <span class="choice__box"></span>
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6.5" width="12.5" height="11" rx="2" /><path d="m15.5 10.5 5.5-3v9l-5.5-3" /></svg>
+                      <span class="choice__txt"><b>Video walkthrough</b>Join a Live virtual tour with our team</span>
+                    </label>
+                  </div>
+                </fieldset>
+                <label class="field">
+                  <span>Preferred date</span>
+                  <input type="date" name="date" />
+                </label>
+                <label class="field">
+                  <span>Preferred time slot</span>
+                  <select name="slot">
+                    <option value="">Select a slot</option>
+                    <option>10:00 – 12:00</option>
+                    <option>12:00 – 14:00</option>
+                    <option>14:00 – 16:00</option>
+                    <option>16:00 – 18:00</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+
+            <div class="step">
+              <div class="step__num"><b>02</b>Your details</div>
+              <div class="step__fields">
+                <label class="field"><span>Full Name</span><input type="text" name="name" placeholder="Enter your full name" required /></label>
+                <label class="field"><span>Email address</span><input type="email" name="email" placeholder="you@example.com" required /></label>
+                <label class="field field--full">
+                  <span>Phone Number</span>
+                  <span class="phone">
+                    <select name="cc" aria-label="Country code"><option>+91</option><option>+1</option><option>+44</option><option>+971</option></select>
+                    <input type="tel" name="phone" placeholder="Enter your phone number" />
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <div class="step">
+              <div class="step__num"><b>03</b>Additional information</div>
+              <div class="step__fields step__fields--row">
+                <label class="field field--grow"><span>Your enquiry (Optional)</span><textarea name="msg" rows="2" placeholder="Ask a question or share your concern"></textarea></label>
+                <button class="btn btn--dark btn--sm house__submit" type="submit">Submit</button>
+              </div>
+            </div>
+            <p class="house__done" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <div class="footer__logo">Aurel Estates</div>
+        <p>Homes for a meaningful tomorrow</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M20 2H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h8.6v-7.7H10v-3h2.6V9.1c0-2.6 1.6-4 3.9-4 1.1 0 2 .1 2.3.1v2.7h-1.6c-1.3 0-1.5.6-1.5 1.5v1.9h3l-.4 3h-2.6V22H20a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2Z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M20 2H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2ZM8.3 19H5.3V9.5h3V19ZM6.8 8.2a1.7 1.7 0 1 1 0-3.5 1.7 1.7 0 0 1 0 3.5ZM19 19h-3v-4.6c0-1.1 0-2.5-1.5-2.5s-1.8 1.2-1.8 2.4V19h-3V9.5h2.9v1.3c.4-.8 1.4-1.6 2.9-1.6 3.1 0 3.6 2 3.6 4.7V19Z"/></svg></a>
+          <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.5 14.1c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.4Z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Explore</h4>
+        <a href="#find">Buy</a><a href="#find">Rent</a><a href="#residences">Neighbourhoods</a><a href="#experience">About</a>
+      </div>
+      <div class="footer__col">
+        <h4>Support</h4>
+        <a href="#faq">FAQs</a><a href="#visit">Contact Us</a><a href="#visit">Schedule a Visit</a><a href="#">Privacy Policy</a><a href="#">Terms of Service</a>
+      </div>
+      <div class="footer__col">
+        <h4>Our Locations</h4>
+        <span>New Delhi, India</span><span>Gurugram, India</span><span>Bangalore, India</span><span>Jaipur, India</span>
+      </div>
+      <p class="footer__copy">© 2026 Aurel Estates. All Rights reserved. Design by ShallikaSethDesigns</p>
+    </div>
+    <img class="footer__skyline" src="assets/img/skyline.webp" alt="" />
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
