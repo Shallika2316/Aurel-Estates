@@ -1,0 +1,3 @@
+# Design source files: not used by the site. If present, Vercel serves public/ as the
+# site root (it has no index.html), which causes a 404 on /.
+/public
