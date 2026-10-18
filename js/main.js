@@ -14,6 +14,29 @@
   if ("scrollRestoration" in history) history.scrollRestoration = "manual";
   window.scrollTo(0, 0);
 
+  const residences = [
+    {
+      title: "Luxury Residential Homes",
+      desc: "Discover exceptional residences defined by timeless architecture, refined interiors, and thoughtfully chosen locations, where luxury meets everyday comfort.",
+      tag: "Available for Buying and Renting", price: "₹ 1 Cr.", area: "1000 - 4500 sq. ft.", bhk: "2- 5 BHK", n: 1,
+    },
+    {
+      title: "Modern Apartments",
+      desc: "Well-planned apartments in connected neighbourhoods, with shared green spaces, security and amenities that make city living feel effortless.",
+      tag: "Available for Buying and Renting", price: "₹ 45 L", area: "650 - 2200 sq. ft.", bhk: "1- 4 BHK", n: 2,
+    },
+    {
+      title: "Independent Villas",
+      desc: "Private villas with gardens, terraces and room to breathe, designed for families who want space, privacy and a quieter pace of life.",
+      tag: "Available for Buying", price: "₹ 3.5 Cr.", area: "3500 - 8000 sq. ft.", bhk: "4- 6 BHK", n: 3,
+    },
+    {
+      title: "Builder Floors",
+      desc: "Low-rise independent floors in established residential colonies, offering the privacy of a home with the convenience of a city address.",
+      tag: "Available for Buying and Renting", price: "₹ 1.8 Cr.", area: "1800 - 3600 sq. ft.", bhk: "3- 4 BHK", n: 4,
+    },
+  ];
+
   // If the animation libraries failed to load, show the plain site.
   if (!window.gsap || !window.ScrollTrigger) {
     $(".preloader")?.remove();
@@ -21,6 +44,7 @@
     body.classList.remove("is-locked");
     $(".nav").style.transform = "none";
     initStaticBits();
+    initFallbackUI();
     return;
   }
 
@@ -268,28 +292,6 @@
   /* ---------------------------------------------------------
      RESIDENCES — tabs with image wipe + autoplay
      --------------------------------------------------------- */
-  const residences = [
-    {
-      title: "Luxury Residential Homes",
-      desc: "Discover exceptional residences defined by timeless architecture, refined interiors, and thoughtfully chosen locations, where luxury meets everyday comfort.",
-      tag: "Available for Buying and Renting", price: "₹ 1 Cr.", area: "1000 - 4500 sq. ft.", bhk: "2- 5 BHK", n: 1,
-    },
-    {
-      title: "Modern Apartments",
-      desc: "Well-planned apartments in connected neighbourhoods, with shared green spaces, security and amenities that make city living feel effortless.",
-      tag: "Available for Buying and Renting", price: "₹ 45 L", area: "650 - 2200 sq. ft.", bhk: "1- 4 BHK", n: 2,
-    },
-    {
-      title: "Independent Villas",
-      desc: "Private villas with gardens, terraces and room to breathe, designed for families who want space, privacy and a quieter pace of life.",
-      tag: "Available for Buying", price: "₹ 3.5 Cr.", area: "3500 - 8000 sq. ft.", bhk: "4- 6 BHK", n: 3,
-    },
-    {
-      title: "Builder Floors",
-      desc: "Low-rise independent floors in established residential colonies, offering the privacy of a home with the convenience of a city address.",
-      tag: "Available for Buying and Renting", price: "₹ 1.8 Cr.", area: "1800 - 3600 sq. ft.", bhk: "3- 4 BHK", n: 4,
-    },
-  ];
   // Preload all residence images
   residences.forEach((r) => ["main", "a", "b", "c"].forEach((k) => { const i = new Image(); i.src = `assets/img/res-${r.n}-${k}.webp`; }));
 
@@ -335,14 +337,7 @@
     // text out → swap → in
     gsap.timeline()
       .to(infoText, { y: -16, opacity: 0, duration: 0.3, ease: "power2.in", stagger: 0.025, overwrite: true })
-      .add(() => {
-        $(".res__title").textContent = d.title;
-        $(".res__desc").textContent = d.desc;
-        $(".res__tag").textContent = d.tag;
-        $(".res__price").textContent = d.price;
-        $(".res__area").textContent = d.area;
-        $(".res__bhk").textContent = d.bhk;
-      })
+      .add(() => fillResidenceText(d))
       .fromTo(infoText, { y: 20 }, { y: 0, opacity: 1, duration: 0.8, ease: "expo.out", stagger: 0.04 });
 
     // thumbs: clip-path wipe (no transforms, so the CSS hover zoom never fights it)
@@ -529,12 +524,51 @@
   /* ---------------------------------------------------------
      Bits that work without GSAP
      --------------------------------------------------------- */
+  function fillResidenceText(d) {
+    $(".res__title").textContent = d.title;
+    $(".res__desc").textContent = d.desc;
+    $(".res__tag").textContent = d.tag;
+    $(".res__price").textContent = d.price;
+    $(".res__area").textContent = d.area;
+    $(".res__bhk").textContent = d.bhk;
+  }
+
+  // Local (not UTC) date, so the min date isn't yesterday in UTC+ time zones such as IST before 05:30.
+  function todayISO() {
+    const d = new Date();
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+  }
+
+  // Residence tabs and FAQ without animation, used when GSAP is unavailable.
+  function initFallbackUI() {
+    const tabs = $$(".res__tabs button");
+    tabs.forEach((t, i) => t.addEventListener("click", () => {
+      const d = residences[i];
+      tabs.forEach((o, k) => o.setAttribute("aria-selected", String(k === i)));
+      $(".res__main-img img").src = `assets/img/res-${d.n}-main.webp`;
+      $$(".res__thumb img").forEach((img, k) => { img.src = `assets/img/res-${d.n}-${"abc"[k]}.webp`; });
+      fillResidenceText(d);
+    }));
+
+    const items = $$(".faq__item");
+    items.forEach((item) => {
+      $(".faq__q", item).addEventListener("click", () => {
+        const willOpen = !item.classList.contains("is-open");
+        items.forEach((o) => {
+          const open = o === item && willOpen;
+          o.classList.toggle("is-open", open);
+          $(".faq__q", o).setAttribute("aria-expanded", String(open));
+        });
+      });
+    });
+  }
+
   function initStaticBits() {
     const form = document.querySelector(".house__form");
     if (!form || form.dataset.ready) return;
     form.dataset.ready = "1";
     const date = form.querySelector('input[type="date"]');
-    if (date) date.min = new Date().toISOString().slice(0, 10);
+    if (date) date.min = todayISO();
 
     const done = form.querySelector(".house__done");
     form.addEventListener("submit", (e) => {
@@ -550,7 +584,7 @@
       const first = name.value.trim().split(" ")[0];
       done.textContent = `Thank you, ${first}. Our team will be in touch shortly to confirm your visit.`;
       form.reset();
-      if (date) date.min = new Date().toISOString().slice(0, 10);
+      if (date) date.min = todayISO();
     });
     form.addEventListener("input", (e) => e.target.classList.remove("is-invalid"));
   }
